@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Parcel Booking - Trip Sheet</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .trip-sheet {
+            max-width: 1000px;
+            background: #fff;
+            margin: 0 auto;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-top: 5px solid #0056b3;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            margin: 0;
+            color: #333;
+        }
+        .header .trip-meta {
+            text-align: right;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .parcel-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .parcel-table th, .parcel-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        .parcel-table th {
+            background-color: #0056b3;
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.85em;
+        }
+        .parcel-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .parcel-table tbody tr:hover {
+            background-color: #f1f5f9;
+        }
+        .summary {
+            margin-top: 25px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .summary-box {
+            background: #eef2f7;
+            padding: 15px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .print-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 12px;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        .print-btn:hover {
+            background-color: #218838;
+        }
+        @media print {
+            body { background: #fff; padding: 0; }
+            .trip-sheet { box-shadow: none; border: none; padding: 0; max-width: 100%; }
+            .print-btn, .header { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="trip-sheet">
+    <div class="header">
+        <h2>Local Parcel Delivery Manifest</h2>
+        <div class="trip-meta">
+            <strong>Date:</strong> <?php echo date("Y-m-d"); ?><br>
+            <strong>Trip ID:</strong> #TRIP-90241
+        </div>
+    </div>
+
+    <table class="parcel-table">
+        <thead>
+            <tr>
+                <th>AWB / ID</th>
+                <th>Sender</th>
+                <th>Recipient</th>
+                <th>Destination</th>
+                <th>Weight (kg)</th>
+                <th>Amount</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            // 1. Database connection setup
+            $servername = "localhost";
+            $username = "your_db_user";
+            $password = "your_db_password";
+            $dbname = "your_db_name";
+
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            if ($conn->connect_error) {
+                die("<tr><td colspan='7'>Connection failed: " . $conn->connect_error . "</td></tr>");
+            }
+
+            // 2. Querying data (Update your table/columns accordingly)
+            $sql = "SELECT id, sender_name, receiver_name, destination, weight, amount, status FROM parcel_bookings WHERE trip_date = CURDATE()";
+            $result = $conn->query($sql);
+
+            $totalParcels = 0;
+            $totalAmount = 0.0;
+
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    $totalParcels++;
+                    $totalAmount += $row['amount'];
+                    
+                    echo "<tr>";
+                    echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['sender_name']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['receiver_name']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['destination']) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['weight']) . "</td>";
+                    echo "<td>$" . number_format($row['amount'], 2) . "</td>";
+                    echo "<td>" . htmlspecialchars($row['status']) . "</td>";
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='7' style='text-align:center;'>No parcels booked for today's trip.</td></tr>";
+            }
+            $conn->close();
+            ?>
+        </tbody>
+    </table>
+
+    <div class="summary">
+        <div class="summary-box">
+            Total Parcels: <?php echo $totalParcels; ?> | Total Amount Collected: $<?php echo number_format($totalAmount, 2); ?>
+        </div>
+    </div>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">Print Trip Sheet</button>
+
+</body>
+</html>

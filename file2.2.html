@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Parcel Booking Trip Sheet</title>
+    <style>
+        /* --- General Reset & Base Styles --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* --- Trip Sheet Container --- */
+        .trip-sheet-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #28a745;
+        }
+
+        /* --- Header Section --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            color: #28a745;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header .doc-details {
+            text-align: right;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .header .doc-details p {
+            margin-bottom: 5px;
+        }
+
+        /* --- Metadata / Info Grid --- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background: #f9fbf9;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #d4e6d7;
+        }
+
+        .info-card h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .info-card p {
+            font-size: 15px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        /* --- Table Styling --- */
+        .table-responsive {
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #28a745;
+            color: #fff;
+            padding: 12px 10px;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fcfcfc;
+        }
+
+        /* --- Footer Section --- */
+        .trip-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+
+        .notes {
+            flex-grow: 1;
+            margin-right: 20px;
+        }
+
+        .notes h4 {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .notes p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .signatures {
+            display: flex;
+            gap: 30px;
+        }
+
+        .sig-box {
+            text-align: center;
+            font-size: 13px;
+            color: #555;
+            width: 150px;
+        }
+
+        .sig-box .line {
+            margin-top: 40px;
+            border-bottom: 1px solid #999;
+        }
+
+        /* --- Print Optimization --- */
+        @media print {
+            body {
+                background-color: #fff;
+                padding: 0;
+            }
+
+            .trip-sheet-wrapper {
+                box-shadow: none;
+                border: none;
+                padding: 10px;
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            table {
+                page-break-inside: auto;
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+        }
+
+        /* --- Action Button --- */
+        .btn-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .print-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .print-btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="btn-container no-print">
+        <button class="print-btn" onclick="window.print()">🖨️ Print Trip Sheet</button>
+    </div>
+
+    <div class="trip-sheet-wrapper">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <h1>CITY LINK COURIERS</h1>
+                <p>Local Parcel Delivery & Logistics</p>
+            </div>
+            <div class="doc-details">
+                <p><strong>Trip Sheet No:</strong> #TS-2026-042</p>
+                <p><strong>Date:</strong> June 4, 2026</p>
+                <p><strong>Status:</strong> Active</p>
+            </div>
+        </div>
+
+        <!-- Info Grid -->
+        <div class="info-grid">
+            <div class="info-card">
+                <h4>Driver Details</h4>
+                <p>Rajesh Kumar</p>
+                <p style="font-size: 12px; font-weight: 400; color: #666; margin-top: 3px;">Ph: +91 98765 43210</p>
+            </div>
+            <div class="info-card">
+                <h4>Vehicle Details</h4>
+                <p>KA-01-HH-1234 (Tata Ace)</p>
+                <p style="font-size: 12px; font-weight: 400; color: #666; margin-top: 3px;">Starting Odo: 45,210 km</p>
+            </div>
+            <div class="info-card">
+                <h4>Route / Area</h4>
+                <p>Mahadevapura, Bengaluru</p>
+                <p style="font-size: 12px; font-weight: 400; color: #666; margin-top: 3px;">Zone: East Block B</p>
+            </div>
+        </div>
+
+        <!-- Consignment Table -->
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>AWB / Docket No</th>
+                        <th>Sender Name</th>
+                        <th>Receiver Name</th>
+                        <th>Delivery Address</th>
+                        <th>Weight (kg)</th>
+                        <th>COD Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>AWB-987123</td>
+                        <td>Aarav Enterprises</td>
+                        <td>Neha Sharma</td>
+                        <td>12th Main, HAL 2nd Stage, Indiranagar</td>
+                        <td>2.5</td>
+                        <td>₹1,450.00</td>
+                        <td><strong>Pending</strong></td>
+                    </tr>
+                    <tr>
+                        <td>AWB-987124</td>
+                        <td>Varun Stores</td>
+                        <td>Karthik Gowda</td>
+                        <td>Brigade Road, Ashok Nagar</td>
+                        <td>5.0</td>
+                        <td>₹0.00</td>
+                        <td><strong>Pending</strong></td>
+                    </tr>
+                    <tr>
+                        <td>AWB-987125</td>
+                        <td>Preeti Apparels</td>
+                        <td>Deepak Patel</td>
+                        <td>Outer Ring Road, Marathahalli</td>
+                        <td>1.2</td>
+                        <td>₹850.00</td>
+                        <td><strong>Pending</strong></td>
+                    </tr>
+                    <tr>
+                        <td>AWB-987126</td>
+                        <td>Online Shoppe</td>
+                        <td>Ananya Reddy</td>
+                        <td>Whitefield Main Road, Whitefield</td>
+                        <td>8.4</td>
+                        <td>₹3,200.00</td>
+                        <td><strong>Pending</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer -->
+        <div class="trip-footer">
+            <div class="notes">
+                <h4>Trip Notes & Instructions</h4>
+                <p>1. All parcels must be delivered by 8:00 PM today.<br>
+                   2. Cash on Delivery (COD) amounts must be deposited before shift end.<br>
+                   3. Obtain recipient signatures on the delivery manifest.</p>
+            </div>
+            <div class="signatures">
+                <div class="sig-box">
+                    <div class="line"></div>
+                    <p>Driver Signature</p>
+                </div>
+                <div class="sig-box">
+                    <div class="line"></div>
+                    <p>Manager Signature</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
