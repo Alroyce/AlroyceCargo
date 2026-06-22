@@ -32,6 +32,6 @@ Billing System:
 
 Technologies Used
 
-Python: The programming language used for building the backend of the system.
-SQLite3: A lightweight relational database management system used to store the data.
+* Python: The programming language used for building the backend of the system.
+* SQLite3: A lightweight relational database management system used to store the data.
 
