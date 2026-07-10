@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef3f9;
+    color:#333;
+}
+
+/* Navigation */
+
+.container{
+    width:100%;
+    background:linear-gradient(90deg,#0d47a1,#1565c0);
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.container ul{
+    list-style:none;
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+}
+
+.container ul li{
+    margin:0 5px;
+}
+
+.container ul li a{
+    display:block;
+    padding:18px 22px;
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.container ul li a:hover{
+    background:white;
+    color:#1565c0;
+    border-radius:6px;
+}
+
+/* Header */
+.header{
+    width:95%;
+    margin:20px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    position:relative;
+}
+
+.header h1{
+    color:#1565c0;
+}
+
+.meta-info{
+    position:absolute;
+    right:25px;
+    top:25px;
+}
+.inline-fields{
+    display:flex;
+    gap:15px;
+}
+
+.inline-fields input{
+    flex:1;
+}
+
+/* Common boxes */
+.lrform,
+.form-section,
+.article-section,
+.charges-section,
+.details-wrapper,
+.delivery-box,
+#form-group4{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 10px #ccc;
+}
+
+
+/* From To */
+.lrform{
+    width:95%;
+    margin:20px auto;
+}
+
+.form1{
+    display:grid;
+    grid-template-columns:80px 1fr 80px 1fr;
+    gap:15px;
+    align-items:center;
+}
+
+
+/* Consignor Consignee */
+.lrdetails{
+    width:95%;
+    margin:20px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.form-section{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+label{
+    font-weight:600;
+    color:#1565c0;
+}
+
+
+/* Inputs */
+input,
+select{
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    width:100%;
+}
+
+
+/* Booking Section */
+.booking-container{
+    width:95%;
+    margin:20px auto;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+}
+
+
+/* Tables */
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#1565c0;
+    color:white;
+    padding:10px;
+}
+
+td{
+    padding:8px;
+    border-bottom:1px solid #ddd;
+}
+
+
+/* Details */
+.details-wrapper{
+    width:75%;
+}
+
+
+#form-group1{
+    display:flex;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+
+#form-group1 div{
+    display:flex;
+    flex-direction:column;
+}
+
+
+#form-group2{
+    display:flex;
+    gap:15px;
+}
+
+
+.small-input{
+    width:120px;
+    height:35px;
+}
+
+
+/* Delivery */
+.delivery-box{
+    width:250px;
+    height:max-content;
+}
+
+.delivery-box .field{
+    display:flex;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+
+/* Buttons */
+button{
+    background:#1565c0;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+
+#form-group4{
+    width:95%;
+    margin:30px auto;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+
+/* Mobile */
+@media(max-width:900px){
+
+    .lrdetails,
+    .booking-container{
+        grid-template-columns:1fr;
+    }
+
+    .form1{
+        grid-template-columns:1fr;
+    }
+
+    #form-group1,
+    #form-group2{
+        flex-wrap:wrap;
+    }
+
+    .details-wrapper,
+    .delivery-box{
+        width:100%;
+    }
+
+}

@@ -1,0 +1,75 @@
+<html>
+<head>
+        <title>Home Page</title>
+        <link rel="stylesheet" href="tripsheet.css">
+        <script>
+function clearForm() {
+
+    // Clear all input fields
+    document.querySelectorAll(".tripform input").forEach(input => {
+
+        if (input.type === "checkbox" || input.type === "radio") {
+            input.checked = false;
+        } else {
+            input.value = "";
+        }
+
+    });
+
+    // Reset all select elements (if any)
+    document.querySelectorAll(".tripform select").forEach(select => {
+        select.selectedIndex = 0;
+    });
+
+}
+</script>
+</head>
+<body>
+<div class="container">
+    <ul>
+     <li><a href="Home-Page-index.html">HOME</a></li>
+        <li><a href="topay.html">To Pay</a></li>
+        <li><a href="paid.html">Paid</a></li>
+        <li><a href="tripsheet.html">Trip Sheet</a></li>
+        <li><a href="bookings.html">Bookings</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</div>
+<h1>TRIP SHEET</h1>
+
+<div class="meta">
+        <h2>ALFA CARGO</p>
+        <p>A SOLUTION FOR ALL Transport Management</p>
+    </div>
+
+<div class="tripform">
+
+        <div class="form1">
+            <label>Date</label>
+            <input type="date">
+        </div>
+        <div class="form2">
+            <label>From</label>
+            <input type="text">
+
+            <label>To</label>
+            <input type="text">
+        </div>    
+        <div class="form3">
+            <label>Driver Name</label>
+            <input type="text">
+
+            <label>Driver Number</label>
+            <input type="tel">
+        </div>
+
+        <div id="form-group5">
+            <button onclick="window.print()">Print</button>
+            <button type="button" onclick="clearForm()">Clear</button>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

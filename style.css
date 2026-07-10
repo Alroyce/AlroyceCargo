@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    background:#72a4e2;
+    color:#333;
+}
+
+/* ================= NAVIGATION ================= */
+
+.container{
+
+    width:100%;
+    background:linear-gradient(90deg,#0d47a1,#1565c0);
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+
+}
+
+.container ul{
+
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    padding:5px;
+}
+
+.container ul li{
+
+    margin:3px;
+}
+
+.container ul li a{
+
+    display:block;
+    padding:15px 22px;
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    border-radius:6px;
+    transition:.3s;
+}
+
+.container ul li a:hover{
+
+    background:white;
+    color:#1565c0;
+}
+/* ================= HEADER ================= */
+
+.header{
+
+    width:95%;
+    margin:20px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    position:relative;
+    box-shadow:0 3px 10px #ccc;
+
+}
+.header h1{
+
+    color:#1565c0;
+
+}
+.meta-info{
+
+    position:absolute;
+    right:25px;
+    top:25px;
+    text-align:right;
+
+}
+/* ================= COMMON BOXES ================= */
+
+.lrform,
+.form-section,
+.article-section,
+.charges-section,
+.details-wrapper,
+.delivery-box,
+#form-group4{
+
+
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 3px 10px #ccc;
+}
+/* ================= FROM TO ================= */
+.lrform{
+
+    width:95%;
+    margin:20px auto;
+}
+.form1{
+
+    display:grid;
+    grid-template-columns:30px 1fr 20px 1fr;
+    gap:15px;
+    align-items:center;
+}
+/* ================= CONSIGNOR ================= */
+
+
+.lrdetails{
+
+    width:95%;
+    margin:20px auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+
+}
+
+
+
+.form-section{
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
+}
+
+
+
+.inline-fields{
+
+    display:flex;
+    gap:15px;
+
+}
+
+
+.inline-fields input{
+
+    flex:1;
+
+}
+
+
+
+label{
+
+    font-weight:600;
+    color:#1565c0;
+
+}
+
+
+
+/* ================= INPUTS ================= */
+
+
+input,
+select{
+
+
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    width:100%;
+    outline:none;
+
+}
+
+
+input:focus,
+select:focus{
+
+    border-color:#1565c0;
+
+}
+
+
+
+
+
+/* ================= BOOKING ================= */
+
+
+.booking-container{
+
+
+    width:95%;
+    margin:20px auto;
+
+    display:grid;
+    grid-template-columns:2fr 1fr;
+
+    gap:20px;
+
+}
+
+/* ================= TABLE ================= */
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+
+    background:#1565c0;
+    color:white;
+    padding:10px;
+}
+td{
+
+    padding:8px;
+    border-bottom:1px solid #ddd;
+    
+}
+td input{
+
+    width:100%;
+}
+.article-section button{
+
+    margin-top:10px;
+}
+/* ================= WEIGHT DETAILS ================= */
+.details-wrapper{
+
+    width:100%;
+}
+#form-group1{
+
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-bottom:20px;
+}
+#form-group1 div{
+
+    display:flex;
+    flex-direction:column;
+}
+#form-group2{
+
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+.small-input{
+
+    width:120px;
+    height:35px;
+
+}
+
+
+
+
+
+/* ================= DELIVERY ================= */
+
+
+.delivery-box{
+
+    width:500px;
+
+}
+
+
+
+.delivery-box .field{
+
+    display:flex;
+    justify-content: center;
+
+    gap:30px;
+    margin-bottom:15px;
+}
+.delivery-box label{
+
+    white-space:nowrap;
+}
+
+/* ================= BUTTON ================= */
+
+
+button{
+
+    background:#1565c0;
+    color:white;
+
+    border:none;
+
+    padding:12px 20px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+
+button:hover{
+
+    background:#0d47a1;
+
+}
+
+
+
+
+
+#form-group4{
+
+    width:95%;
+
+    margin:30px auto;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+
+
+
+
+/* ================= MOBILE ================= */
+
+
+@media(max-width:900px){
+
+
+.container ul{
+
+    justify-content:center;
+
+}
+
+
+
+.header{
+
+    padding:20px;
+
+}
+
+
+
+.meta-info{
+
+    position:static;
+    margin-top:15px;
+    text-align:left;
+
+}
+
+
+
+.lrdetails,
+.booking-container{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.form1{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.inline-fields{
+
+    flex-direction:column;
+
+}
+
+
+
+#form-group1,
+#form-group2{
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.details-wrapper,
+.delivery-box{
+
+    width:100%;
+
+}
+
+
+
+.small-input{
+
+    width:100%;
+
+}
+
+
+}
