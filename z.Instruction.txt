@@ -1,0 +1,21 @@
+VSC
+[
+
+create a html page.
+diferent html pages with different names like, index.html, to pay.html, paid.html, tripsheet.html
+
+create css page
+different css pages for diferent. 
+(Home Page) - index.html-index.css, to_pay.html&paid.html - to_pay.css.
+
+create javascript pages.
+Home page(index.html-script_1.js), (to_pay.html&paid.html--script.js)
+
+
+
+DATABASE
+Install mysql 
+create scipt.js
+using commands create a table
+] 
+
