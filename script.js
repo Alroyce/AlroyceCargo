@@ -61,7 +61,8 @@ function generateLRNumber() {
 
     let lr = "LR-" + String(count).padStart(5, "0");
 
-    document.getElementById("lrNumber").textContent = lr;
+    document.getElementById("lrNumber").textContent = lrNo;
+    document.getElementById("lr_number").value = lrNo;
 }
 
 
@@ -76,7 +77,8 @@ function generateDate() {
         String(today.getMonth() + 1).padStart(2, "0") + "-" +
         today.getFullYear();
 
-    document.getElementById("lrdate").textContent = date;
+    document.getElementById("lrdate").textContent = today;
+    document.getElementById("booking_date").value = today;
 }
 
 // Add Goods Row
@@ -159,3 +161,20 @@ function clearsection() {
     generateLRNumber();
     generateDate();
 }
+const data = {
+    payment_type: "TO-PAY",
+    sender_name: "Ramesh",
+    receiver_name: "Suresh",
+    charges: 250
+};
+
+fetch("http://localhost:3000/book", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+})
+.then(response => response.text())
+.then(result => alert(result))
+.catch(error => console.error(error));
