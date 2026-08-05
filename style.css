@@ -8,7 +8,7 @@
     font-family:'Poppins',sans-serif;
 }
 body{
-    background:#131414;
+    background:#c5ccd5;
     color:#333;
 }
 
@@ -17,7 +17,7 @@ body{
 .container{
 
     width:100%;
-    background:linear-gradient(90deg,#0d47a1,#1565c0);
+    background:linear-gradient(90deg,#616468,#1565c0);
     box-shadow:0 3px 10px rgba(0,0,0,.2);
 
 }
@@ -50,13 +50,13 @@ body{
 .container ul li a:hover{
 
     background:white;
-    color:#1565c0;
+    color:#e1e7b6;
 }
 /* ================= HEADER ================= */
 
 .header{
 
-    width:95%;
+    width:100%;
     margin:20px auto;
     background:white;
     padding:25px;
@@ -67,7 +67,7 @@ body{
 }
 .header h1{
 
-    color:#1565c0;
+    color:#dacf50;
 
 }
 .meta-info{
@@ -89,7 +89,7 @@ body{
 #form-group4{
 
 
-    background:rgb(157, 198, 223);
+    background:rgb(238, 168, 77);
     padding:20px;
     border-radius:10px;
     box-shadow:0 3px 10px #ccc;
@@ -97,7 +97,7 @@ body{
 /* ================= FROM TO ================= */
 .lrform{
 
-    width:95%;
+    width:100%;
     margin:20px auto;
 }
 .form1{
@@ -112,7 +112,7 @@ body{
 
 .lrdetails{
 
-    width:95%;
+    width:100%;
     margin:20px auto;
 
     display:grid;
@@ -152,7 +152,7 @@ body{
 label{
 
     font-weight:600;
-    color:#1565c0;
+    color:#032224;
 
 }
 
@@ -191,7 +191,7 @@ select:focus{
 .booking-container{
 
 
-    width:95%;
+    width:100%;
     margin:20px auto;
 
     display:grid;
@@ -211,7 +211,7 @@ table{
 
 th{
 
-    background:#1565c0;
+    background:#2dc39d;
     color:white;
     padding:10px;
 }
@@ -254,7 +254,7 @@ td input{
 }
 .small-input{
 
-    width:120px;
+    width:100px;
     height:35px;
 
 }
@@ -292,7 +292,7 @@ td input{
 
 button{
 
-    background:#1565c0;
+    background:#010b16;
     color:white;
 
     border:none;
@@ -311,7 +311,7 @@ button{
 
 button:hover{
 
-    background:#0d47a1;
+    background:#e1e7f0;
 
 }
 
@@ -321,7 +321,7 @@ button:hover{
 
 #form-group4{
 
-    width:95%;
+    width:100%;
 
     margin:30px auto;
 
@@ -340,7 +340,7 @@ button:hover{
 /* ================= MOBILE ================= */
 
 
-@media(max-width:900px){
+@media(max-width:100%){
 
 
 .container ul{

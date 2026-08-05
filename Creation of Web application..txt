@@ -1,0 +1,101 @@
+Transport_Project/
+│
+├── index.html          (Dashboard/Home)
+├── topay.html
+├── paid.html
+├── tripsheet.html
+├── reports.html
+├── customers.html
+├── settings.html
+│
+├── css/
+│   ├── style.css
+│   ├── topay.css
+│   └── paid.css
+│
+├── js/
+│   ├── main.js
+│   ├── topay.js
+│   └── paid.js
+│
+└── images/
+
+Each menu item opens its own page (or route). Even if the application feels like a single app, technologies like React, Angular, Vue, ASP.NET, Laravel, or Django usually load a different component or route for each screen.
+
+
+Project API-
+
+API URL - https://gwbtxahnuhizwkgqlxtc.supabase.co/rest/v1/
+
+Publishable key : sb_publishable_ioEn4TcvnNX4kle78HE__A_JG_qYifl
+====================================================================================================
+
+After the frontend, the next step depends on what kind of website you're building.
+
+If it's a static website (portfolio, company landing page)
+
+You may not need a backend at all. Your next focus is:
+
+Responsive design
+SEO
+Performance optimization
+Analytics
+Custom domain
+Security (HTTPS is already handled by Netlify)
+If it's a web application (login, dashboard, bookings, etc.)
+
+The usual roadmap is:
+
+Backend development-
+
+Learn a backend framework such as:
+
+Node.js + Express
+Python + Flask or Django
+Java + Spring Boot
+ASP.NET Core
+Database
+Learn a database like:
+PostgreSQL
+MySQL
+MongoDB
+APIs
+
+Build REST APIs (or GraphQL) so the frontend can send and receive data.
+Authentication
+Add features like:
+User registration
+Login/logout
+Password hashing
+JWT or session-based authentication
+Deploy the backend
+Deploy your API to a hosting platform, then connect your Netlify frontend to it.
+For your Alfa Cargo project
+
+If it's meant to be a logistics company website, a good progression would be:
+
+Frontend ✅
+Backend API
+Database
+Contact form that stores enquiries
+Shipment tracking
+Admin dashboard to manage shipments
+User authentication (for staff/customers)
+Full deployment
+A practical learning path
+HTML, CSS, JavaScript ✅
+Git & GitHub ✅
+Netlify deployment ✅
+Responsive design
+Learn React (optional but widely used)
+Learn Node.js + Express
+Learn SQL (PostgreSQL or MySQL)
+Build REST APIs
+Connect frontend to backend
+Deploy the full application
+
+If your goal is to become a full-stack developer, Node.js + Express with PostgreSQL is a popular stack because it lets you use JavaScript on both the frontend and backend.
+
+
+
+
